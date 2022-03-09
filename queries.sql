@@ -11,3 +11,8 @@ SELECT * FROM `courses` WHERE `cfu` > 10;
 SELECT * 
 FROM `students` 
 WHERE NOW() > DATE_ADD(`date_of_birth`,INTERVAL 30 YEAR);
+
+/* 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di
+laurea (286) */
+
+SELECT count(*) FROM `courses` WHERE `period` = 'I semestre' AND `year` = 1;
