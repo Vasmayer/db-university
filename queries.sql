@@ -44,8 +44,12 @@ SELECT COUNT(*) AS 'enrolment_number',YEAR(`enrolment_date`) AS 'enrolment_YEAR'
 
 /* 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio */
 
-SELECT COUNT(*) AS 'numero insegnanti' ,`office_address` FROM `teachers` GROUP BY `office_address`;
+SELECT COUNT(*) AS 'numero insegnanti' ,`office_address` FROM `teachers` GROUP BY `office_address` ASC;
 
 /* 3. Calcolare la media dei voti di ogni appello d'esame */
 
-SELECT ROUND(AVG(`vote`),1) AS 'media voti',`exam_id` FROM `exam_student` GROUP BY `exam_id`;
+SELECT ROUND(AVG(`vote`),1) AS 'media voti',`exam_id` FROM `exam_student` GROUP BY `exam_id` ASC;
+
+/* 4. Contare quanti corsi di laurea ci sono per ogni dipartimento */
+
+SELECT COUNT(*) AS 'numero corsi',`department_id` FROM `degrees`GROUP BY `department_id`ASC;
