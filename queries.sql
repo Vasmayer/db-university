@@ -41,3 +41,7 @@ SELECT COUNT(*) FROM `teachers` WHERE `phone` IS NOT NULL;
 /* 1. Contare quanti iscritti ci sono stati ogni anno */
 
 SELECT COUNT(*) AS 'enrolment_number',YEAR(`enrolment_date`) AS 'enrolment_YEAR' FROM `students` GROUP BY `enrolment_YEAR` ASC;
+
+/* 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio */
+
+SELECT COUNT(*) AS 'numero insegnanti' ,`office_address` FROM `teachers` GROUP BY `office_address`;
